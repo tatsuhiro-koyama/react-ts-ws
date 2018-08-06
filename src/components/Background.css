@@ -1,0 +1,34 @@
+.fJOxpn {
+  position: fixed;
+  margin: 0 auto;
+  height: 100%;
+  overflow: hidden;
+  background-position: 50% 50%;
+  width: 100%;
+  background-image: url(https://cdn.narikiri-qa.jp/oreimo-ayase/assets/background/BG_ayase_chokaigi_256.jpg);
+  background-size: cover;
+  top: 0;
+}
+
+.jKrAON {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  overflow: hidden;
+  width: 120%;
+  height: 13.2vh;
+  background: #c85fb3;
+  border-radius: 50% 50% 0 0;
+}
+
+.cUYrKd {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  width: 100%;
+  height: 17.4vh;
+  background: linear-gradient(-180deg, #c85fb3 0%, rgba(255, 255, 255, 0) 100%);
+}
