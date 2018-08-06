@@ -1,0 +1,32 @@
+*,
+input[type="search"] {
+  box-sizing: border-box;
+}
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  outline: none;
+}
+* {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+*:focus {
+  outline: none;
+}
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+@media (min-width: 415px) {
+  html {
+    font-size: 80%;
+  }
+}
+body {
+  height: 100%;
+  position: relative;
+  min-height: 100%;
+}
