@@ -1,47 +1,25 @@
+import { observer } from "mobx-react";
 import * as React from "react";
 import MessageList from "../containers/MessageList";
-import MessageModel from "../models/Message";
 import "./App.css";
 import Background from "./Background";
 import PostQuestion from "./PostQuestion";
 
-class App extends React.Component<
-  {},
-  {
-    showLoading: boolean;
-    messages: Array<{ id: number; text: string }>;
-  }
-> {
-  public constructor(props: {}) {
-    super(props);
-    this.state = { showLoading: true, messages: [] };
-  }
-
-  public componentDidMount() {
-    this.setState({ showLoading: true });
-    MessageModel.getMessages()
-      .then(messages => {
-        this.setState({ showLoading: false, messages });
-      })
-      .catch(error => {
-        this.setState({ showLoading: false });
-        alert("メッセージの取得に失敗しました。再読み込みをお願いします。");
-      });
-  }
-
+@observer
+class App extends React.Component {
   public onClick = (question: string) => {
-    this.setState({ showLoading: true });
-    MessageModel.postMessage(question)
-      .then(message => {
-        this.setState({
-          messages: this.state.messages.concat(message),
-          showLoading: false
-        });
-      })
-      .catch(error => {
-        this.setState({ showLoading: false });
-        alert("メッセージの保存に失敗しました。");
-      });
+    // this.setState({ showLoading: true });
+    // MessageModel.postMessage(question)
+    //   .then(message => {
+    //     this.setState({
+    //       messages: this.state.messages.concat(message),
+    //       showLoading: false
+    //     });
+    //   })
+    //   .catch(error => {
+    //     this.setState({ showLoading: false });
+    //     alert("メッセージの保存に失敗しました。");
+    //   });
   };
 
   public render() {

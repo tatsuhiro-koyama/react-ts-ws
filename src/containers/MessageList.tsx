@@ -6,6 +6,7 @@ import MessageListStore from "../stores/MessageList";
 @inject("store")
 class MessageList extends React.Component<{ store?: MessageListStore }> {
   public render() {
+    // store と component を紐づける glue code
     // tslint:disable-next-line:no-console
     console.log(this.props);
     return <MessageListComponent store={this.props.store!} />;
