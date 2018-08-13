@@ -1,8 +1,8 @@
 import * as React from "react";
+import MessageList from "../containers/MessageList";
 import MessageModel from "../models/Message";
 import "./App.css";
 import Background from "./Background";
-import MessageList from "./MessageList";
 import PostQuestion from "./PostQuestion";
 
 class App extends React.Component<
@@ -49,7 +49,7 @@ class App extends React.Component<
       <section className="frame sc-hMFtBS iYluwC">
         <Background />
         <div className="sc-gipzik gxlJcU full">
-          <MessageList {...this.state} />
+          <MessageList />
           <PostQuestion onClick={this.onClick} maxLength={30} />
         </div>
       </section>
