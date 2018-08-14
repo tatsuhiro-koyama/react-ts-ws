@@ -1,9 +1,9 @@
 import { observer } from "mobx-react";
 import * as React from "react";
 import MessageList from "../containers/MessageList";
+import PostQuestion from "../containers/PostQuestion";
 import "./App.css";
 import Background from "./Background";
-import PostQuestion from "./PostQuestion";
 
 @observer
 class App extends React.Component {
@@ -28,7 +28,7 @@ class App extends React.Component {
         <Background />
         <div className="sc-gipzik gxlJcU full">
           <MessageList />
-          <PostQuestion onClick={this.onClick} maxLength={30} />
+          <PostQuestion />
         </div>
       </section>
     );

@@ -11,6 +11,7 @@ import Message from "../src/components/Message";
 import MessageList from "../src/components/MessageList";
 import Loading from "../src/components/Loading";
 import PostQuestion from "../src/components/PostQuestion";
+import QuestionStore from "../src/stores/Question";
 
 storiesOf("Background", module).add("default", () => <Background />);
 
@@ -51,8 +52,9 @@ storiesOf("MessageList", module)
 
 storiesOf("Loading", module).add("default", () => <Loading />);
 
+const question = new QuestionStore();
 storiesOf("PostQuestion", module).add("default", () => (
-  <PostQuestion maxLength={20} onClick={action("click-PostQuestion")} />
+  <PostQuestion store={question} />
 ));
 
 storiesOf("App", module)
