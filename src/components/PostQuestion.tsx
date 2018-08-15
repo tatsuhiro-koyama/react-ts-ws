@@ -16,16 +16,7 @@ export default class PostQuestion extends React.Component<{
   };
 
   public onClick = () => {
-    // if (this.state.question.length === 0) {
-    //   alert("入力されていません");
-    //   return;
-    // }
-    // if (this.state.question.length > this.props.maxLength) {
-    //   alert("入力文字数オーバー");
-    //   return;
-    // }
-    // this.props.onClick(this.state.question);
-    // this.setState({ question: "" });
+    this.props.action.onClick();
   };
 
   public render() {

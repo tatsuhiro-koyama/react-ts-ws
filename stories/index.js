@@ -57,6 +57,13 @@ storiesOf("PostQuestion", module).add("default", () => (
   <PostQuestion store={question} />
 ));
 
+const appAction = {
+  postQuestion: action("postQuestion")
+};
 storiesOf("App", module)
-  .addDecorator(story => <Provider store={stores[1]}>{story()}</Provider>)
+  .addDecorator(story => (
+    <Provider store={stores[1]} action={appAction}>
+      {story()}
+    </Provider>
+  ))
   .add("default", () => <App />);

@@ -27,4 +27,19 @@ export default class AppAction {
       });
     }
   }
+
+  @action
+  public async postQuestion(question: string) {
+    try {
+      this.store.showLoading = true;
+      const message = await MessageModel.postMessage(question);
+      runInAction(() => {
+        this.store.messages.push(message);
+      });
+    } finally {
+      runInAction(() => {
+        this.store.showLoading = false;
+      });
+    }
+  }
 }
