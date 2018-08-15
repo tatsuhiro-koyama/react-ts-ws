@@ -28,7 +28,7 @@ class App extends React.Component {
         <Background />
         <div className="sc-gipzik gxlJcU full">
           <MessageList />
-          <PostQuestion />
+          <PostQuestion maxLength={30} />
         </div>
       </section>
     );

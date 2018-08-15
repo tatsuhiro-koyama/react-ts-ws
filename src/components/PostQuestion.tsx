@@ -1,5 +1,6 @@
 import { observer } from "mobx-react";
 import * as React from "react";
+import QuestionAction from "../actions/Question";
 import QuestionStore from "../stores/Question";
 import "./images/ico/ico_q-white.png";
 import "./PostQuestion.css";
@@ -7,26 +8,11 @@ import "./PostQuestion.css";
 @observer
 export default class PostQuestion extends React.Component<{
   store: QuestionStore;
+  action: QuestionAction;
 }> {
-  public constructor(props: { store: QuestionStore }) {
-    super(props);
-    // this.state = {
-    //   info: `あと ${props.maxLength} 文字入力できます。`,
-    //   question: ""
-    // };
-  }
-
   public onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // const questionText = e.target.value;
-    // const textRestCount = this.props.maxLength - questionText.length;
-    // const info =
-    //   textRestCount >= 0
-    //     ? `あと ${textRestCount} 文字入力できます。`
-    //     : `${-textRestCount} 文字入力オーバーしています。`;
-    // this.setState({
-    //   info,
-    //   question: questionText
-    // });
+    const questionText = e.target.value;
+    this.props.action.onChange(questionText);
   };
 
   public onClick = () => {
